@@ -36,8 +36,8 @@ class Login:
         self.category = ''
         self.error = 0
 
-        self.img = PhotoImage(file=f"{self.PROJECT_DIR}\\LoginPageImage.png")
-        self.login_btn_img = PhotoImage(file=f"{self.PROJECT_DIR}\\login_btn.png")
+        self.img = PhotoImage(file="./assets/images/LoginPageImage.png")
+        self.login_btn_img = PhotoImage(file="./assets/images/login_btn.png")
 
         self.canvas = Canvas(self.window, bd=0, highlightthickness=0, relief='ridge')
         self.canvas.pack(fill="both", expand="yes")
@@ -62,7 +62,7 @@ class Login:
         if self.username and self.user_pass == "":
             messagebox.showerror("Error", "Input cannot be empty!!")
         else:
-            conn = sq.connect(f"{self.PROJECT_DIR}\\demo.db")
+            conn = sq.connect("./demo.db")
             cur = conn.cursor()
             for row in cur.execute(f"SELECT * FROM users"):
                 if self.username == row[0] and self.user_pass == row[1]:
@@ -114,13 +114,12 @@ class AdminPage:
         self.window.title("Attendance Management System : Admin page")
         self.window.config(bg="#dbffdb")
         self.window.resizable(0, 0)
-        self.PROJECT_DIR = os.getcwd()
 
         self.style = ttk.Style()
         self.style.theme_use('clam')
         self.style.map("Treeview", background=[('selected', "#c0c0ff")])
 
-        self.conn = sq.connect(f"{self.PROJECT_DIR}\\demo.db")
+        self.conn = sq.connect("./demo.db")
         self.cur = self.conn.cursor()
         result = self.cur.execute(f"SELECT * FROM login_log ORDER BY sr DESC LIMIT 1")
         for row in result:
@@ -340,7 +339,6 @@ class MarkAttendance:
     user_year = 0
 
     def __init__(self, a, b, c, d):
-        self.PROJECT_DIR = os.getcwd()
         today_date = date.today()
         self.d2 = today_date.strftime("%B %d,%Y")
         self.window = Tk()
@@ -349,7 +347,7 @@ class MarkAttendance:
         self.window.config(bg="#dbffdb")
         self.window.resizable(0, 0)
 
-        self.conn = sq.connect(f"{self.PROJECT_DIR}\\demo.db")
+        self.conn = sq.connect("./demo.db")
         self.cur = self.conn.cursor()
 
         self.department = b
@@ -360,8 +358,8 @@ class MarkAttendance:
         self.roll_count = 1
         self.counter = 0
 
-        self.checked = PhotoImage(file=f"{self.PROJECT_DIR}\\checked.png")
-        self.unchecked = PhotoImage(file=f"{self.PROJECT_DIR}\\unchecked.png")
+        self.checked = PhotoImage(file="./assets/images/checked.png")
+        self.unchecked = PhotoImage(file="./assets/images/unchecked.png")
 
         self.style = ttk.Style()
 
@@ -528,9 +526,8 @@ class AdminLog:
         self.window.geometry("800x575")
         self.window.config(bg="#dbffdb")
         self.window.resizable(0, 0)
-        self.PROJECT_DIR = os.getcwd()
 
-        self.conn = sq.connect(f"{self.PROJECT_DIR}\\demo.db")
+        self.conn = sq.connect("./demo.db")
 
         self.sem = c
         self.user_year = a
@@ -827,7 +824,6 @@ class Student:
         self.window.title("Attendance Management System : Student Log")
         self.window.config(bg="#dbffdb")
         self.window.resizable(0, 0)
-        self.PROJECT_DIR = os.getcwd()
 
         self.style = ttk.Style()
 
@@ -841,7 +837,7 @@ class Student:
         # change color theme
         self.style.map("Treeview", background=[('selected', "#347083")])
 
-        self.conn = sq.connect(f"{self.PROJECT_DIR}\\demo.db")
+        self.conn = sq.connect("./demo.db")
         self.cur = self.conn.cursor()
         for row in self.cur.execute(f"SELECT * FROM login_log ORDER BY sr DESC LIMIT 1"):
             self.user_name = row[1]
