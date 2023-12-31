@@ -6,11 +6,11 @@ Since this is a demo project we have our database installed locally.
 
 To see the structure of database (demo.db) use [SQliteStudio](https://sqlitestudio.pl/)
 
-![AdminPage](https://drive.google.com/uc?export=view&id=1AyuSoxzljK6PfYhBv4ZCNG1aOhjJG7tL)
+![AdminPage](https://github.com/BUMBAIYA/AttendanceManagement/assets/85615075/94da3581-812d-40df-ac20-8b17b9303498)
 
-![AdminMarkAttendancePage](https://drive.google.com/uc?export=view&id=19-0idyjFc6w54Xjpls0wbGcgbGA7yja6)
+![AdminMarkAttendancePage](https://github.com/BUMBAIYA/AttendanceManagement/assets/85615075/26415d4e-4aef-4f3d-94b4-54a12fb0c28a)
 
-![StudentPage](https://drive.google.com/uc?export=view&id=17oa0mP8_11kfx5kBZoXtTdSuJC-UEuO4)
+![StudentPage](https://github.com/BUMBAIYA/AttendanceManagement/assets/85615075/a7da55f9-2d22-404d-adc1-41ee3515cbfa)
 
 ## Setup
 - Clone the project in preferred directory using: ```git clone https://github.com/BUMBAIYA/AttendanceManagement.git```
